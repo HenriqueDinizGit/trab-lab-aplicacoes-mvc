@@ -61,7 +61,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.trabmvc.home-broker.HomeBrokerApplication</mainClass>
+                    <mainClass>com.trabmvc.homebroker.HomeBrokerApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>
