@@ -18,11 +18,9 @@ import jakarta.validation.constraints.Size;
 @Entity
 @Table(name = User.TABLE_NAME)
 public class User {
-    public interface CreateUser {
-    }
+    public interface CreateUser {}
 
-    public interface UpdateUser {
-    }
+    public interface UpdateUser {}
 
     public static final String TABLE_NAME = "user";
 
@@ -44,9 +42,7 @@ public class User {
 
     // private List<Acoes> acoes = new ArrayList<Acoes>(Acoes);
 
-    public User() {
-
-    }
+    public User() {}
 
     public User(Long id, String username, String password) {
         this.id = id;

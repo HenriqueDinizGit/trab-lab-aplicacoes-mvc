@@ -17,7 +17,7 @@ public class UserService {
     
     public User findById(Long id) {
         Optional<User> user = this.userRepository.findById(id);
-        return user.orElseThrow(() -> new RuntimeException("Usuario nao encontrado"));
+        return user.orElseThrow(() -> new RuntimeException("Usuario nao encontrado "));
     }
 
     @Transactional
