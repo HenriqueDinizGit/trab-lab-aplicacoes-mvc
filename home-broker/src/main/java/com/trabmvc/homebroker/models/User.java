@@ -84,7 +84,7 @@ public class User {
             return true;
 
         if (o == null)
-            return false;   
+            return false;
 
         if (!(o instanceof User))
             return false;

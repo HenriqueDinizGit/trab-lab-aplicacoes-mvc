@@ -1,0 +1,12 @@
+com/trabmvc/homebroker/models/User$UpdateUser.class
+com/trabmvc/homebroker/HomeBrokerApplication.class
+com/trabmvc/homebroker/models/User$CreateUser.class
+com/trabmvc/homebroker/services/UserService.class
+com/trabmvc/homebroker/repositories/UserRepository.class
+com/trabmvc/homebroker/models/User.class
+com/trabmvc/homebroker/controllers/UserController.class
+com/trabmvc/homebroker/controllers/HelloWorld.class
+com/trabmvc/homebroker/controllers/UserCreateDTO.class
+com/trabmvc/homebroker/controllers/Produtos.class
+com/trabmvc/homebroker/models/Produto.class
+com/trabmvc/homebroker/services/ProdutoService.class
