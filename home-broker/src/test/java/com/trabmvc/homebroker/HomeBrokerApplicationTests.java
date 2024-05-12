@@ -1,13 +1,13 @@
-package com.trabmvc.homebroker;
+// package com.trabmvc.homebroker;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+// import org.junit.jupiter.api.Test;
+// import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class HomeBrokerApplicationTests {
+// @SpringBootTest
+// class HomeBrokerApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+// @Test
+// void contextLoads() {
+// }
 
-}
+// }

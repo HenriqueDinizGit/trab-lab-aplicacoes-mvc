@@ -1,22 +1,44 @@
 version: '3.8'
 
 services:
-  backend:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_DB: bd_trab
+      POSTGRES_USER: host
+      POSTGRES_PASSWORD: mclakmvr7qYg8owHGG04i8ZfDVzn4ZOg
     ports:
-      - "8080:8080"
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U host -d bd_trab"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   rabbitmq:
     image: rabbitmq:3-management
     container_name: rabbitmq
     restart: always
     ports:
-      - 5672:5672
-      - 15672:15672
+      - "5672:5672"
+      - "15672:15672"
     volumes:
-      - ./rabbitmq/data:/var/lib/rabbitmq
+      - "./rabbitmq/data:/var/lib/rabbitmq"
     environment:
-        RABBITMQ_DEFAULT_USER: admin
-        RABBITMQ_DEFAULT_PASS: 123456
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: 123456
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/bd_trab
+      SPRING_DATASOURCE_USERNAME: host
+      SPRING_DATASOURCE_PASSWORD: mclakmvr7qYg8owHGG04i8ZfDVzn4ZOg
