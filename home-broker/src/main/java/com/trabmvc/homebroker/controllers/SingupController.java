@@ -11,7 +11,7 @@ import com.trabmvc.homebroker.models.User;
 import com.trabmvc.homebroker.repositories.UserRepository;
 
 @Controller
-public class RegistrationController {
+public class SingupController {
 
     @Autowired
     private UserRepository userRepository;
@@ -19,14 +19,14 @@ public class RegistrationController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    @GetMapping("/register")
-    public String showRegistrationForm() {
-        return "register";
+    @GetMapping("/signup")
+    public String signup() {
+        return "signup";
     }
 
-    @PostMapping("/register")
+    @PostMapping("/signup")
     public String registerUserAccount(@RequestParam("username") String username,
-                                      @RequestParam("password") String password) {
+            @RequestParam("password") String password) {
         User newUser = new User();
         newUser.setUsername(username);
         newUser.setPassword(passwordEncoder.encode(password));
